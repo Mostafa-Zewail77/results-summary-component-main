@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+
+:root {
+    /* Primary colors */
+    --color-light-red: hsl(0, 100%, 67%);
+    ---color-light-red-bg: hsla(0, 100%, 67% , .08);
+    --color-orangey-yellow: hsl(39, 100%, 56%);
+    --color-orangey-yellow-bg: hsla(39, 100%, 56% , .08);
+    --color-green-teal: hsl(166, 100%, 37%);
+    --color-green-teal-bg: hsla(166, 100%, 37%, .08);
+    --color-cobalt-blue: hsl(234, 85%, 45% );
+    --color-cobalt-blue-bg: hsla(234, 85%, 45% , .08);
+    
+    /* Gradient colors */
+    
+    --gradient-1: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    --gradient-2: linear-gradient(to bottom, hsla(256, 72%, 46%, 1) , hsla(241, 72%, 46%, 0) );
+
+    /* Neutral colors */
+    --color-white: hsl(0, 0%, 100%);
+    --color-pale-blue: hsl(221, 100%, 96%);
+    --color-light-lavender: hsl(241, 100%, 89%);
+    --color-dark-gray-blue: hsl(224, 30%, 27%);
+}
+  
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    font-family: 'Hanken Grotesk';
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-pale-blue);
+    position: relative;
+
+}
+
+.result-summary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 20px ;
+    width: 650px;
+    background: var(--color-white);
+    
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, .1);
+
+}
+
+/* Result */
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    border-radius: 2rem;
+    padding: 2rem;
+    background: var(--gradient-1);
+    gap: 1rem;
+}
+.result h2{
+    color:var(--color-light-lavender) ;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.result >h1{
+    color: var(--color-white);
+    margin: 1rem 0;
+}
+
+.result >p{
+    
+    font-size: 18px;
+    text-align: center;
+    color: var(--color-light-lavender);
+    
+}
+
+.circle{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    background: var(--gradient-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    
+}
+.circle h1{
+    color: var(--color-white);
+    font-size: 4rem;
+
+}
+.circle p {
+    color: var(--color-light-lavender);
+    /* font-size: 14px; */
+    
+}
+
+.summary{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem ;
+    gap: 1rem;
+}
+
+.summary h2{
+    color: var(--color-dark-gray-blue);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.summary-items{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.summary-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+}
+
+
+.summary-item p {
+    color: gray;
+    
+}
+.summary-item p span{
+    font-weight: 800;
+    color: var(--color-dark-gray-blue);
+    opacity: 1;
+}
+.title{
+    display: flex;
+    flex: 1;
+    gap: .5rem;
+    
+}
+
+.summary-item:nth-child(1){
+    background: var(---color-light-red-bg);
+}
+.summary-item:nth-child(1) h3{
+    color: var(--color-light-red);
+}
+.summary-item:nth-child(2){
+    background: var(--color-orangey-yellow-bg);
+}
+.summary-item:nth-child(2) h3{
+    color: var(--color-orangey-yellow);
+}
+.summary-item:nth-child(3){
+    background: var(--color-green-teal-bg);
+}
+.summary-item:nth-child(3) h3{
+    color: var(--color-green-teal);
+}
+.summary-item:nth-child(4){
+    background: var(--color-cobalt-blue-bg);
+
+}
+.summary-item:nth-child(4) h3{
+    color: var(--color-cobalt-blue);
+}
+
+
+button{
+    color: var(--color-white);
+    background: var(--color-dark-gray-blue);
+    line-height: 43px;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    
+}
+button:hover{
+    background: var(--gradient-1);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 650px) {
+    body{
+        align-items: flex-start;
+        background: var(--color-white);
+    }
+    .result-summary{
+        flex-direction: column;
+        box-shadow: none;
+        width: 100%;
+        
+        margin-bottom: 1rem;
+    }
+    .result{
+        border-top-right-radius: 0;
+        border-top-left-radius:0 ;
+        width: 100%;
+    }
+    .summary{
+        width: 100%;
+    }
+}
